@@ -15,9 +15,9 @@ export class PretragaComponent implements OnInit {
   query: string = '';
   searchResults: Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   onSearch(): void {
     this.searchResults = this.movieService.searchMovies(this.query);

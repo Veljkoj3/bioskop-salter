@@ -17,7 +17,7 @@ export class RegistracijaComponent {
   password = '';
   registrationError = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   onRegister(): void {
     if (this.authService.register(this.username, this.email, this.password)) {

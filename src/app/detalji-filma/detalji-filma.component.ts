@@ -29,7 +29,7 @@ export class DetaljiFilmaComponent implements OnInit {
     private reservationService: ReservationService,
     public authService: AuthService,
     private location: Location
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));

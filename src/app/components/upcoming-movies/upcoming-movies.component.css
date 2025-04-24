@@ -11,7 +11,7 @@
 }
 
 .movie-card {
-  background-color: #f3f4f6; /* svetla pozadina */
+  background-color: #f3f4f6;
   border-radius: 12px;
   padding: 1rem;
   width: 220px;
@@ -41,4 +41,3 @@
   font-size: 0.9rem;
   font-weight: bold;
 }
-

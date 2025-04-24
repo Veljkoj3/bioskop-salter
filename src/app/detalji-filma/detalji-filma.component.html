@@ -18,11 +18,8 @@
       <div *ngIf="authService.isLoggedIn()" class="rating-form">
         <label>Ocenite film:</label>
         <div class="stars">
-          <span *ngFor="let star of [1,2,3,4,5]" 
-                (click)="setRating(star)" 
-                (mouseover)="hoverRating = star"
-                (mouseleave)="hoverRating = 0" 
-                [ngClass]="{ filled: star <= (hoverRating || rating) }">
+          <span *ngFor="let star of [1,2,3,4,5]" (click)="setRating(star)" (mouseover)="hoverRating = star"
+            (mouseleave)="hoverRating = 0" [ngClass]="{ filled: star <= (hoverRating || rating) }">
             &#9733;
           </span>
         </div>

@@ -6,32 +6,32 @@
       <p><strong>Korisničko ime:</strong> {{ user.username }}</p>
       <p><strong>Email:</strong> {{ user.email }}</p>
     </div>
-    <!-- Dugmad -->
-<div class="profile-actions">
-  <button class="action-button" (click)="showChangePassword = !showChangePassword">🔒 Promeni šifru</button>
-  <button class="action-button" (click)="showUpdateProfile = !showUpdateProfile">✏️ Ažuriraj profil</button>
-</div>
 
-<!-- Forma za promenu šifre -->
-<div *ngIf="showChangePassword" class="form-box">
-  <h4>Promena šifre</h4>
-  <input type="password" placeholder="Stara šifra" [(ngModel)]="oldPassword" />
-  <input type="password" placeholder="Nova šifra" [(ngModel)]="newPassword" />
-  <button (click)="changePassword()">Potvrdi</button>
-</div>
+    <div class="profile-actions">
+      <button class="action-button" (click)="showChangePassword = !showChangePassword">🔒 Promeni šifru</button>
+      <button class="action-button" (click)="showUpdateProfile = !showUpdateProfile">✏️ Ažuriraj profil</button>
+    </div>
 
-<!-- Forma za ažuriranje profila -->
-<div *ngIf="showUpdateProfile" class="form-box">
-  <h4>Ažuriranje profila</h4>
-  <input type="email" placeholder="Novi email" [(ngModel)]="updatedEmail" />
-  <button (click)="updateProfile()">Sačuvaj</button>
-</div>
+
+    <div *ngIf="showChangePassword" class="form-box">
+      <h4>Promena šifre</h4>
+      <input type="password" placeholder="Stara šifra" [(ngModel)]="oldPassword" />
+      <input type="password" placeholder="Nova šifra" [(ngModel)]="newPassword" />
+      <button (click)="changePassword()">Potvrdi</button>
+    </div>
+
+
+    <div *ngIf="showUpdateProfile" class="form-box">
+      <h4>Ažuriranje profila</h4>
+      <input type="email" placeholder="Novi email" [(ngModel)]="updatedEmail" />
+      <button (click)="updateProfile()">Sačuvaj</button>
+    </div>
 
     <h3>Moje rezervacije:</h3>
     <div *ngIf="user?.reservations?.length; else nemaRezervacija" class="reservations">
       <ul>
         <li *ngFor="let reservation of user.reservations" class="reservation-item">
-          <span>🎬 Film: {{ reservation.movieTitle }}</span> | 
+          <span>🎬 Film: {{ reservation.movieTitle }}</span> |
           <span>📅 Datum: {{ reservation.date}}</span>
           <button class="cancel-btn" (click)="cancelReservation(reservation)">Otkazivanje</button>
         </li>
@@ -48,5 +48,3 @@
     <p>Niste prijavljeni. <a routerLink="/prijava">Prijavite se</a>.</p>
   </ng-template>
 </div>
-
-

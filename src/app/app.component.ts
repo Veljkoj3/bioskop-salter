@@ -22,7 +22,7 @@ export class AppComponent {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/']); // Vraća korisnika na početnu stranicu
+    this.router.navigate(['/']); 
   }
 }
 

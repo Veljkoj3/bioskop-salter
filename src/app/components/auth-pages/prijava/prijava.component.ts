@@ -16,7 +16,7 @@ export class PrijavaComponent {
   password = '';
   loginError = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   onLogin(): void {
     if (this.authService.login(this.username, this.password)) {

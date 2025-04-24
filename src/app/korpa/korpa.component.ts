@@ -8,7 +8,7 @@ import { AuthService } from '../core/services/auth/auth.service';
 @Component({
   selector: 'app-korpa',
   standalone: true,
-  imports: [CommonModule], 
+  imports: [CommonModule],
   templateUrl: './korpa.component.html',
   styleUrls: ['./korpa.component.css']
 })
@@ -26,26 +26,26 @@ export class KorpaComponent {
 
   getTotalPrice(): number {
     return this.cart.reduce((total, movie) => total + movie.price, 0);
-  }  
+  }
 
   confirmReservation() {
     const currentUser = this.authService.getLoggedInUser();
-  
+
     if (currentUser) {
       for (const movie of this.cart) {
-        // Proveri da li film već postoji među rezervacijama korisnika
+        
         const alreadyReserved = currentUser.reservations.some((reservation: any) => reservation.movieTitle === movie.title);
-  
+
         if (alreadyReserved) {
           alert(`Film "${movie.title}" je već rezervisan!`);
         } else {
-          // Dodaj rezervaciju ako nije već rezervisan
+         
           this.authService.addReservation(movie.title, new Date().toLocaleDateString('sr-RS'));
           alert(`Uspešno rezervisan film: ${movie.title}`);
         }
       }
-      this.clearCart();  // Praznimo korpu nakon rezervacije
+      this.clearCart();  
     }
   }
-  
+
 }  

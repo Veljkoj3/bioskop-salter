@@ -12,14 +12,14 @@ import { FormsModule } from '@angular/forms';
 export class ProfilComponent implements OnInit {
   user: any = null;
 
-  // ✅ Dodaj ove promenljive za formu:
+
   showChangePassword = false;
   showUpdateProfile = false;
   oldPassword = '';
   newPassword = '';
   updatedEmail = '';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.user = this.authService.getLoggedInUser();
@@ -54,7 +54,7 @@ export class ProfilComponent implements OnInit {
     }
   }
 
-  // ✅ Dodaj ove metode:
+  
 
   changePassword() {
     if (this.oldPassword !== this.user.password) {

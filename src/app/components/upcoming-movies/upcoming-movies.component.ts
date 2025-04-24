@@ -13,7 +13,7 @@ import { UpcomingMoviesService } from '../../core/services/upcoming/upcoming-mov
 export class UpcomingMoviesComponent implements OnInit {
   upcomingMovies: any[] = [];
 
-  constructor(private upcomingMoviesService: UpcomingMoviesService) {}
+  constructor(private upcomingMoviesService: UpcomingMoviesService) { }
 
   ngOnInit(): void {
     this.upcomingMovies = this.upcomingMoviesService.getUpcomingMovies();

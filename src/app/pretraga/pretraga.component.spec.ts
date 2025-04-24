@@ -10,7 +10,7 @@ describe('PretragaComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PretragaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PretragaComponent);
     component = fixture.componentInstance;

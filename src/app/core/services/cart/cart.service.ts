@@ -1,4 +1,4 @@
-// cart.service.ts
+
 import { Injectable } from '@angular/core';
 import { Movie } from '../../../models/movie.model';
 import { AuthService } from '../auth/auth.service';
@@ -9,7 +9,7 @@ import { AuthService } from '../auth/auth.service';
 export class CartService {
   private cart: Movie[] = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) { }
 
   addToCart(movie: Movie) {
     if (!this.cart.find(m => m.id === movie.id)) {

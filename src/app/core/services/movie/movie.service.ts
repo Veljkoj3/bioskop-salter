@@ -199,7 +199,7 @@ export class MovieService {
   }
 
   rateMovie(movieId: number, rating: number): void {
-    const movies = this.getMovies(); // tvoja metoda za uzimanje svih filmova
+    const movies = this.getMovies(); 
     const movie = movies.find(m => m.id === movieId);
 
     if (movie) {
@@ -207,7 +207,7 @@ export class MovieService {
         movie.ratings = [];
       }
       movie.ratings.push(rating);
-      localStorage.setItem('movies', JSON.stringify(movies)); // čuvamo ocene
+      localStorage.setItem('movies', JSON.stringify(movies)); 
     }
   }
 

@@ -9,14 +9,14 @@ import { PrijavaComponent } from './components/auth-pages/prijava/prijava.compon
 import { RegistracijaComponent } from './components/auth-pages/registracija/registracija.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full'}, // Početna stranica
+  { path: '', component: HomeComponent, pathMatch: 'full' }, 
   { path: 'pretraga', component: PretragaComponent },
-  { path: 'film/:id', component: DetaljiFilmaComponent }, // Dinamički ID filma
+  { path: 'film/:id', component: DetaljiFilmaComponent }, 
   { path: 'korpa', component: KorpaComponent },
   { path: 'profil', component: ProfilComponent },
-  { path: 'movies', component: MovieListComponent},
+  { path: 'movies', component: MovieListComponent },
   { path: 'prijava', component: PrijavaComponent },
-  { path: 'registracija', component: RegistracijaComponent }, 
-  { path: '**', redirectTo: ''}
+  { path: 'registracija', component: RegistracijaComponent },
+  { path: '**', redirectTo: '' }
 ];
 

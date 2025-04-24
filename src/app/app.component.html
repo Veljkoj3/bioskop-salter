@@ -8,11 +8,11 @@
   </div>
 
   <div class="auth-links">
-    <!-- Ako korisnik NIJE ulogovan, prikaži prijavu i registraciju -->
+
     <a *ngIf="!isLoggedIn()" [routerLink]="['/prijava']" routerLinkActive="active" class="btn">Prijava</a>
     <a *ngIf="!isLoggedIn()" [routerLink]="['/registracija']" routerLinkActive="active" class="btn">Registracija</a>
 
-    <!-- Ako korisnik JESTE ulogovan, prikaži dugme za odjavu -->
+
     <button *ngIf="isLoggedIn()" (click)="logout()" class="btn logout">Odjavi se</button>
   </div>
 </nav>

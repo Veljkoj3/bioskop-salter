@@ -10,7 +10,7 @@ describe('PrijavaComponent', () => {
     await TestBed.configureTestingModule({
       imports: [PrijavaComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(PrijavaComponent);
     component = fixture.componentInstance;
