@@ -1,0 +1,27 @@
+<div class="auth-container">
+  <h2>Registracija</h2>
+  <form (ngSubmit)="onRegister()">
+    <div class="form-group">
+      <label for="username">Korisničko ime:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Lozinka:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required />
+    </div>
+
+    <button type="submit" class="register-button">Registruj se</button>
+
+    <p *ngIf="registrationError" class="error">Korisnik sa ovim imenom već postoji.</p>
+  </form>
+</div>
+
+
+
+  

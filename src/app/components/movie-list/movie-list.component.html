@@ -1,0 +1,15 @@
+<div class="movie-list"> 
+  <div *ngFor="let movie of movies" class="movie-card">
+    <img [src]="movie.imageUrl" alt="{{ movie.title }}" class="movie-poster">
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.genre }}</p>
+    <p>{{ movie.duration }} min</p>
+    <p>{{ movie.price }} RSD</p>
+
+    <div class="button-wrapper">
+      <button class="buy-button" (click)="reserveTicket(movie)">Rezerviši</button>
+      <a [routerLink]="['/film', movie.id]" class="details-button">Više detalja</a>
+    </div>
+  </div>
+</div>
+

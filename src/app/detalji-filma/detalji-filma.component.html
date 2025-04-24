@@ -1,0 +1,37 @@
+<div *ngIf="movie" class="movie-details-container">
+  <div class="movie-card">
+    <button (click)="goBack()" class="back-button">⬅ Nazad</button>
+    <div class="poster">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}">
+    </div>
+    <div class="info">
+      <h2>{{ movie.title }}</h2>
+      <p><strong>Opis:</strong> {{ movie.description }}</p>
+      <p><strong>Žanr:</strong> {{ movie.genre }}</p>
+      <p><strong>Trajanje:</strong> {{ movie.duration }} min</p>
+      <p><strong>Režiser:</strong> {{ movie.director }}</p>
+      <p><strong>Glumci:</strong> {{ movie.actors.join(', ') }}</p>
+      <p><strong>Datum izlaska:</strong> {{ movie.releaseDate }}</p>
+      <p><strong>Cena karte:</strong> {{ movie.price }} RSD</p>
+      <p><strong>Prosečna ocena:</strong> {{ averageRating }}/5</p>
+
+      <div *ngIf="authService.isLoggedIn()" class="rating-form">
+        <label>Ocenite film:</label>
+        <div class="stars">
+          <span *ngFor="let star of [1,2,3,4,5]" 
+                (click)="setRating(star)" 
+                (mouseover)="hoverRating = star"
+                (mouseleave)="hoverRating = 0" 
+                [ngClass]="{ filled: star <= (hoverRating || rating) }">
+            &#9733;
+          </span>
+        </div>
+        <button (click)="submitRating()">Pošalji ocenu</button>
+      </div>
+
+      <button class="buy-button" (click)="addToCart()">Rezerviši kartu</button>
+    </div>
+  </div>
+</div>
+
+<p *ngIf="!movie">Film nije pronađen!</p>

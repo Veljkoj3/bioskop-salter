@@ -1,0 +1,24 @@
+<div class="cart-container">
+  <h2>🎟️ Vaša korpa</h2>
+
+  <div *ngIf="cart.length === 0" class="empty-cart">
+    <p>Vaša korpa je prazna.</p>
+  </div>
+
+  <div *ngIf="cart.length > 0" class="cart-list">
+    <div *ngFor="let movie of cart" class="cart-item">
+      <div class="cart-title">{{ movie.title }}</div>
+      <div class="cart-price">{{ movie.price }} RSD</div>
+    </div>
+
+    <div class="cart-total">
+      Ukupno: <strong>{{ getTotalPrice() }} RSD</strong>
+    </div>
+
+    <div class="cart-buttons">
+      <button class="btn clear-btn" (click)="clearCart()">🗑️ Obriši sve</button>
+      <button class="btn confirm-btn" (click)="confirmReservation()">✅ Potvrdi rezervaciju</button>
+    </div>
+  </div>
+</div>
+

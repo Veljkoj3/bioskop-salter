@@ -1,0 +1,24 @@
+<div class="search-container">
+  <h2>Pretraga filmova</h2>
+  <div class="search-box">
+    <input type="text" class="search-input" [(ngModel)]="query" placeholder="Unesite naziv filma..." />
+    <button class="search-button" (click)="onSearch()">Pretraži</button>
+  </div>
+
+  <div *ngIf="searchResults.length > 0" class="results">
+    <h3>Rezultati pretrage:</h3>
+    <div *ngFor="let movie of searchResults" class="movie-card">
+      <img [src]="movie.imageUrl" alt="{{ movie.title }}" class="movie-image" />
+      <div class="movie-info">
+        <h5>{{ movie.title }}</h5>
+        <p>{{ movie.description }}</p>
+        <p><strong>Žanr:</strong> {{ movie.genre }}</p>
+        <p><strong>Trajanje:</strong> {{ movie.duration }} min</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="searchResults.length === 0 && query" class="no-results">
+    <p>Nema rezultata pretrage.</p>
+  </div>
+</div>
